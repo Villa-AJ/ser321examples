@@ -4,6 +4,16 @@ apply plugin: 'application'
 //define main class
 mainClassName = 'SimpleServer'
 
+// ✅ Add repository so Gradle knows where to get dependencies
+repositories {
+  mavenCentral()
+}
+
+// Add dependencies
+dependencies {
+  implementation 'org.json:json:20210307' //Add this to fix the missing JSON package
+}
+
 task SimpleWebServer(type: JavaExec) {
   group 'http'
   description 'Simple Http Demo'
